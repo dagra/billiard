@@ -1111,7 +1111,7 @@ class Pool(object):
         self._pool.append(w)
         self._process_register_queues(w, (inq, outq, synq))
         w.name = w.name.replace('Process', 'PoolWorker')
-        w.daemon = True
+        w.daemon = False
         w.index = i
         w.start()
         self._poolctrl[w.pid] = sentinel
